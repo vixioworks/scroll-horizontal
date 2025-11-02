@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.grid-section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(10, 300px); /* 10 colunas fixas de 300px */
+  grid-template-rows: 200px; /* Altura fixa para as linhas */
+  gap: 20px;
+  overflow-x: auto; /* Scroll horizontal */
+  overflow-y: hidden;
+  padding: 10px 0;
+  scrollbar-width: thin /* Para Firefox */;
+  scrollbar-color: #ccc transparent; /* Para Firefox */
+}
+
+/* Custom scrollbar para Webkit (Chrome, Safari, Edge) */
+.grid-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.grid-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.grid-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.grid-container::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.grid-item {
+  background-color: beige;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 10px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.numero {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.titulo {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.instrucoes {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(10, 250px); /* Colunas menores em mobile */
+    grid-template-rows: 180px;
+  }
+
+  .grid-item .numero {
+    font-size: 2rem;
+  }
+
+  .grid-item .titulo {
+    font-size: 1rem;
+  }
+}
